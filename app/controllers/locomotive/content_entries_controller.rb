@@ -64,9 +64,9 @@ module Locomotive
 
     def update
       authorize @content_entry
-
-      puts "xxxxxxx #{content_entry_params}"
       service.update(@content_entry, content_entry_params)
+      Rails.logger.debug("xxxxxxxxx: #{content_entry_params.inspect} #{@content_entry.inspect}")
+
       respond_with @content_entry, location: -> { location_after_persisting }
     end
 
