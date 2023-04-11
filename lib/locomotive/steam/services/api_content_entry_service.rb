@@ -15,9 +15,7 @@ module Locomotive
 
       def update(type_slug, id_or_slug, attributes, as_json = false)
         with_form(type_slug, attributes, as_json) do |_attributes|
-          Rails.logger.debug("zzzzzzzz: #{@content_entry.inspect}")
-
-          entry = @content_type.entries.by_ids_or_slugs(id_or_slug).first
+          entry = @content_type.entries.by_id_or_slug(id_or_slug).first
 
           entry.update_attributes(_attributes)
 
