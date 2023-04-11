@@ -69,8 +69,8 @@ module Locomotive
         def similar_slug(slug)
           _last_slug = self.class.where(_slug: /^#{slug}-?\d*$/i)
                     .excludes(_id: self._id)
-                    .only(:_slug)
-                    .order_by(:_id.desc)
+                    .order_by(:created_at.desc)
+                    .pluck(:_slug)
                     .first
 
           if _last_slug
