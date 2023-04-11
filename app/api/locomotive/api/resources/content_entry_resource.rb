@@ -75,6 +75,7 @@ module Locomotive
           end
           put ':id' do
             form = form_klass.new(parent_content_type, content_entry_params)
+            Rails.logger.debug("zzzzzzzz: #{params[:id]}")
 
             if @content_entry = parent_content_type.entries.by_id_or_slug(params[:id]).first
               authorize @content_entry, :update?

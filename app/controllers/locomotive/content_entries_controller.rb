@@ -65,7 +65,6 @@ module Locomotive
     def update
       authorize @content_entry
       service.update(@content_entry, content_entry_params)
-      Rails.logger.debug("xxxxxxxxx: #{content_entry_params.inspect} yyy #{@content_entry.inspect}")
 
       respond_with @content_entry, location: -> { location_after_persisting }
     end
@@ -96,7 +95,6 @@ module Locomotive
 
     def load_content_entry
       @content_entry = @content_type.entries.find(params[:id])
-      Rails.logger.debug("zzzzzzzz: #{params[:id]}")
 
     end
 
