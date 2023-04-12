@@ -8,9 +8,7 @@ module Locomotive
     end
 
     def image?
-      if self.file.exists?
-        self.file.content_type.start_with?('image')
-      end
+      ""
     end
 
   end
