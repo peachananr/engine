@@ -34,7 +34,7 @@ module CustomFields
 
         # Set correct paths
         def store_dir
-          Rails.logger.info "zzzz"
+          
           "sites/#{model.site_id}/#{model._type.demodulize.underscore}/#{model.id}/files"
         end
 
@@ -55,7 +55,7 @@ module CustomFields
         def guess_url(host = nil)
           this = self.class.new(model, mounted_as)
           this.retrieve_from_store!(model.read_uploader(mounted_as))
-
+          Rails.logger.info "zzzz #{this.url} #{host}"
           if this.url =~ /^http/ || host.blank?
             this.url
           else
