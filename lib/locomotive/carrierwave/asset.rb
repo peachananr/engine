@@ -56,6 +56,7 @@ module Locomotive
         end
 
         def image?(file)
+          Rails.logger.info "zzzzzzzzzzzz #{file}"
           model.image?
         end
 

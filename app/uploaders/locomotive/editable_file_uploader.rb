@@ -9,7 +9,10 @@ module Locomotive
     end
 
     def image?
-      Rails.logger.info "xxxxxxxxxxxxxxx #{self}"
+      Rails.logger.info "yyyyyyyyyyy #{self}"
+      if self.file.exists?
+        self.file.content_type.start_with?('image')
+      end
     end
 
   end
