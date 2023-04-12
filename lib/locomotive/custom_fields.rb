@@ -34,7 +34,6 @@ module CustomFields
 
         # Set correct paths
         def store_dir
-         
           "sites/#{model.site_id}/#{model._type.demodulize.underscore}/#{model.id}/files"
         end
 
