@@ -8,6 +8,8 @@ Locomotive::Steam.configure do |config|
 
   # Dragonfly instance embedded in Steam needs a secret key
   config.image_resizer_secret = Locomotive.config.steam_image_resizer_secret
+  
+  Rails.logger.info "xxxxxxx #{asset_host} yyyyy #{CarrierWave::Uploader::Base.asset_host} zzzzz #{CarrierWave.base_host}"
 
   if asset_host = CarrierWave::Uploader::Base.asset_host # CDN?
     config.asset_host = asset_host
