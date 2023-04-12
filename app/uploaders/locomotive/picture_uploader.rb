@@ -8,8 +8,6 @@ module Locomotive
     end
 
     def image?
-      Rails.logger.info "yyyyyy #{self.inspect}"
-
       self.file.try(:exists?)
     end
 

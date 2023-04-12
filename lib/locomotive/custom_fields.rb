@@ -34,12 +34,11 @@ module CustomFields
 
         # Set correct paths
         def store_dir
+          Rails.logger.info "zzzz"
           "sites/#{model.site_id}/#{model._type.demodulize.underscore}/#{model.id}/files"
         end
 
         def image?
-          Rails.logger.info "zzzz"
-
           !(content_type =~ /image/).nil?
         rescue Exception => e
           Rails.logger.error("[CustomFields][FileUploader][#{model._id}] can't access the uploaded file, reason: #{e.message}")
