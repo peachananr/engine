@@ -38,7 +38,7 @@ module CustomFields
         end
 
         def image?
-          Rails.logger.info "uuuuuuuu#{self.content_type}"
+          Rails.logger.info "uuuuuuuu#{self}"
           true
           #!(content_type =~ /image/).nil?
         rescue Exception => e
