@@ -8,7 +8,7 @@ module Locomotive
     end
 
     def image?
-      self.file.try(:exists?)
+      ""#self.file.try(:exists?)
     end
 
     def store_dir

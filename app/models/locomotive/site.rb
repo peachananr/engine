@@ -22,7 +22,7 @@ module Locomotive
     field :overwrite_same_content_assets, type: Boolean, default: false
     field :allow_dots_in_slugs, type: Boolean, default: false
 
-    mount_uploader :picture, PictureUploader, validate_integrity: false
+    mount_uploader :picture, PictureUploader, validate_integrity: true
 
     ## associations ##
     belongs_to  :created_by,      class_name: 'Locomotive::Account', optional: true
