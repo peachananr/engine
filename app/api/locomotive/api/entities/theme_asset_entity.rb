@@ -26,7 +26,6 @@ module Locomotive
         private
 
         def image?
-          Rails.logger.info "dddddddddd #{self}"
           object.image?
         end
 

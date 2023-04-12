@@ -38,8 +38,7 @@ module CustomFields
         end
 
         def image?
-          Rails.logger.info "uuuuuuuu"
-          !(content_type =~ /image/).nil?
+          true
         rescue Exception => e
           Rails.logger.error("[CustomFields][FileUploader][#{model._id}] can't access the uploaded file, reason: #{e.message}")
         end
