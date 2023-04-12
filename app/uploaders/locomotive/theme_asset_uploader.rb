@@ -7,7 +7,6 @@ module Locomotive
 
     def store_dir
       self.build_store_dir('sites', model.site_id, 'theme', model.folder)
-      Rails.logger.info "zzzzzzzzzzzzzzz #{self.build_store_dir('sites', model.site_id, 'theme', model.folder)}"
 
     end
 

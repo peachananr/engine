@@ -13,7 +13,6 @@ module Locomotive
 
     def store_dir
       self.build_store_dir('uploaded_assets', model.id)
-      Rails.logger.info "xxxxxxxxxxxxxxx #{self.build_store_dir('uploaded_assets', model.id)}"
 
     end
 
