@@ -82,7 +82,7 @@ module CarrierWave
         if default_dir.blank? || default_dir == 'uploads'
           File.join(args.map(&:to_s))
 
-          Rails.logger.info "zzzz #{args.map(&:to_s)}"
+          Rails.logger.info "zzzz #{File.join(args.map(&:to_s))}"
         else
           File.join([default_dir] + args.map(&:to_s))
         end
