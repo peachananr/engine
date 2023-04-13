@@ -38,13 +38,9 @@ module CustomFields
         end
 
         def image?
-          
-          
-          #"true" #monkey patched
+          "true" #monkey patched
           #!(self =~ /jpg|png|webp|jpeg|gif/).nil?
-          !(content_type =~ /image/).nil?
-          puts caller
-          xxx
+          #!(content_type =~ /image/).nil?
         rescue Exception => e
           Rails.logger.error("[CustomFields][FileUploader][#{model._id}] can't access the uploaded file, reason: #{e.message}")
         end
