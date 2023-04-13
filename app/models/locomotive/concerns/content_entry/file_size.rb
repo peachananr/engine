@@ -11,19 +11,15 @@ module Locomotive
           field :_file_size, type: Integer, default: 0
 
           ## callbacks ##
-          before_save :sync_file_size
+          #before_save :sync_file_size
 
         end
 
         private
 
-        def sync_file_size
-          Rails.logger.info "bbbbbbb #{self.file_custom_fields.inspect}"
-          
+        def sync_file_size          
           self._file_size = self.file_custom_fields.inject(0) do |sum, field|
-            Rails.logger.info "ooooo #{field} #{sum}"
             file = send(field)&.file
-            Rails.logger.info "aaaaaa #{send(field).inspect}"
 
             _size = file&.exists? ? file.size : 0
             _size + sum
