@@ -38,7 +38,7 @@ module CustomFields
         end
 
         def image?
-          Thread.current.backtrace.join("\n")
+          puts caller
           xx
           "true" #monkey patched
           #!(self =~ /jpg|png|webp|jpeg|gif/).nil?
