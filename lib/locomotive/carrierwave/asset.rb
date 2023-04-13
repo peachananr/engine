@@ -30,6 +30,7 @@ module Locomotive
 
         def set_content_type_of_model(*args)
           content_type = file.content_type
+          Rails.logger.info "bbbbbbbb #{file.inspect}"
 
           if content_type.blank? || ['application/octet-stream'].include?(content_type)
             content_type = File.mime_type?(original_filename)

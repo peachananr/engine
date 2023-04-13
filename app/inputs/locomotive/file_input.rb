@@ -87,7 +87,7 @@ module Locomotive
     end
 
     def filename_html
-      template.link_to(File.basename(persisted_file.to_s), persisted_file.url)
+      template.link_to(File.basename(persisted_file.to_s), persisted_url)
     end
 
     def persisted_file?
