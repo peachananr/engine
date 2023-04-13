@@ -78,11 +78,7 @@ module CarrierWave
 
       def build_store_dir(*args)
         default_dir = self.class.store_dir
-        Rails.logger.info "222222 #{ self.class.store_dir}"
-
         if default_dir.blank? || default_dir == 'uploads'
-
-          Rails.logger.info "333333 #{  File.join(args.map(&:to_s))}"
           File.join(args.map(&:to_s))
         else
           File.join([default_dir] + args.map(&:to_s))
