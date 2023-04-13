@@ -9,8 +9,6 @@ module Locomotive
 
     def image?
       if self.file.exists?
-        Rails.logger.info "ggggggg #{file.inspect}"
-
         self.file.content_type.start_with?('image')
       end
     end
