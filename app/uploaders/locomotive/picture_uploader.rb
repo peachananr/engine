@@ -8,12 +8,12 @@ module Locomotive
     end
 
     def image?
+      Rails.logger.info "ffffffff"
+
       self.file.try(:exists?)
     end
 
     def store_dir
-      Rails.logger.info "555555"
-
       self.build_store_dir('uploaded_assets', model.id)
     end
 
