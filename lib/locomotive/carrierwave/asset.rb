@@ -41,10 +41,13 @@ module Locomotive
         end
 
         def set_size(*args)
+          Rails.logger.info "uuuuuuuuuu #{file.size}"
+
           model.size = file.size
         end
 
         def set_width_and_height
+          
           if model.image?
             dragonfly_img = ::Dragonfly.app(:engine).fetch_file(current_path)
             begin
@@ -56,6 +59,7 @@ module Locomotive
         end
 
         def image?(file)
+          Rails.logger.info "eeeeeeeeeeee #{model.image?}"
           model.image?
         end
 
