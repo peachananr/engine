@@ -65,8 +65,6 @@ module Locomotive
     def update
       authorize @content_entry
       service.update(@content_entry, content_entry_params)
-      puts "xxxxxxxxxxxxx"
-      puts caller
       respond_with @content_entry, location: -> { location_after_persisting }
     end
 
