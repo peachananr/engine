@@ -85,8 +85,6 @@ module CarrierWave
           Rails.logger.info "333333 #{  File.join(args.map(&:to_s))}"
           File.join(args.map(&:to_s))
         else
-
-          Rails.logger.info "444444 #{  File.join([default_dir] + args.map(&:to_s))}"
           File.join([default_dir] + args.map(&:to_s))
         end
       end

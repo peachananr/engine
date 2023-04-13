@@ -8,6 +8,8 @@ module Locomotive
     end
 
     def image?
+      Rails.logger.info "444444 #{  self.file.inspect}"
+
       if self.file.exists?
         self.file.content_type.start_with?('image')
       end
