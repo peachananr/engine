@@ -41,8 +41,6 @@ module Locomotive
         end
 
         def set_size(*args)
-          Rails.logger.info "hhhhhhh #{file.inspect}"
-
           model.size = file.size
         end
 
