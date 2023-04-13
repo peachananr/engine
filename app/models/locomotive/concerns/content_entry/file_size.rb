@@ -18,11 +18,12 @@ module Locomotive
         private
 
         def sync_file_size
-
+          Rails.logger.info "bbbbbbb #{self.file_custom_fields.inspect}"
+          
           self._file_size = self.file_custom_fields.inject(0) do |sum, field|
             Rails.logger.info "ooooo #{field} #{sum}"
-            file = head(field)&.file
-            Rails.logger.info "aaaaaa #{file.inspect}"
+            file = send(field)&.file
+            Rails.logger.info "aaaaaa #{send(field).inspect}"
 
             _size = file&.exists? ? file.size : 0
             _size + sum
