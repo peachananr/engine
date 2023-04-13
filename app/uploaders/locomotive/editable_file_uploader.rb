@@ -4,8 +4,6 @@ module Locomotive
   class EditableFileUploader < BaseUploader
 
     def store_dir
-      Rails.logger.info "444444 #{  self.inspect}"
-
       self.build_store_dir('sites', model.page.site_id, 'pages', model.page.id, 'files')
     end
 
