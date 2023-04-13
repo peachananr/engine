@@ -41,8 +41,6 @@ module Locomotive
         end
 
         def set_size(*args)
-          Rails.logger.info "uuuuuuuuuu #{file.size}"
-
           model.size = file.size
         end
 
@@ -59,7 +57,6 @@ module Locomotive
         end
 
         def image?(file)
-          Rails.logger.info "eeeeeeeeeeee #{model.image?}"
           model.image?
         end
 

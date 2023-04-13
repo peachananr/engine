@@ -30,6 +30,7 @@ module CarrierWave
         attr_accessor :file_format, :original_filename
 
         def initialize(encoded_file)
+          Rails.logger.info "666666666"
           description, encoded_bytes = encoded_file.split(',')
 
           raise ArgumentError unless encoded_bytes
@@ -45,22 +46,26 @@ module CarrierWave
         private
 
         def get_original_filename(description)
+          Rails.logger.info "55555555"
           regex = /\Adata:[^;]+;(.+);base64\Z/
           regex.match(description).try(:[], 1) || default_filename
         end
 
         def get_file_format(description)
+          Rails.logger.info "44444444"
           regex = /\Adata:([^;]+);/
           regex.match(description).try(:[], 1)
         end
 
         def default_filename
+          Rails.logger.info "33333333"
           File.basename("file.#{@file_format}")
         end
 
       end
 
       def download!(uri_or_base64, remote_headers = {})
+      Rails.logger.info "22222222"
         if uri_or_base64 =~ /\Adata:/
           file = Base64StringIO.new(uri_or_base64)
           cache!(file)
@@ -78,6 +83,7 @@ module CarrierWave
 
       def build_store_dir(*args)
         default_dir = self.class.store_dir
+        Rails.logger.info "11111111"
 
         if default_dir.blank? || default_dir == 'uploads'
           File.join(args.map(&:to_s))
