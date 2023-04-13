@@ -38,8 +38,6 @@ module CustomFields
         end
 
         def image?
-          puts caller
-          xx
           "true" #monkey patched
           #!(self =~ /jpg|png|webp|jpeg|gif/).nil?
           #!(content_type =~ /image/).nil?
