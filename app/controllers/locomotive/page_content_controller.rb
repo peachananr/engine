@@ -60,7 +60,7 @@ module Locomotive
     end
 
     def editable_elements_layout
-      @page.default_response_type? ? 'locomotive/layouts/editor' : '/locomotive/layouts/application'
+      @page.default_response_type? ? 'locomotive/layouts/editor' : 'locomotive/layouts/application'
     end
 
     def site_params

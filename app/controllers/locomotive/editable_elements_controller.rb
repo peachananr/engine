@@ -34,7 +34,7 @@ module Locomotive
     private
 
     def editable_elements_layout
-      @page.default_response_type? ? 'locomotive/layouts/live_editing' : '/locomotive/layouts/application'
+      @page.default_response_type? ? 'locomotive/layouts/live_editing' : 'locomotive/layouts/application'
     end
 
     def load_page
