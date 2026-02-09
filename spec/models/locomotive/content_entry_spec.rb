@@ -384,7 +384,7 @@ describe Locomotive::ContentEntry do
 
         expect(entry.file.url).to eq nil
         expect(entry.another_file.url).not_to eq nil
-        expect(File.exists?(entry.another_file.path)).to eq true
+        expect(File.exist?(entry.another_file.path)).to eq true
       end
 
       it 'allows to delete the 2 files at once' do
@@ -398,8 +398,8 @@ describe Locomotive::ContentEntry do
 
         expect(entry.file.url).to eq nil
         expect(entry.another_file.url).to eq nil
-        expect(File.exists?(old_file_path)).to eq false
-        expect(File.exists?(old_another_file_path)).to eq false
+        expect(File.exist?(old_file_path)).to eq false
+        expect(File.exist?(old_another_file_path)).to eq false
       end
 
     end
@@ -432,6 +432,29 @@ describe Locomotive::ContentEntry do
     let(:model)         { build_content_entry }
     let(:attribute)     { :content_version }
 
+  end
+
+  describe '.by_id_or_slug' do
+    before do
+      build_content_entry({ _slug: 'foo' }, false).save!
+      build_content_entry({ _slug: 'bar' }, false).save!
+    end
+    
+    subject { content_type.entries.by_id_or_slug(slug).first }
+
+    describe 'Given there is no content entry in DB matching the slug' do
+      let(:slug) { 'unknown' }
+
+      it { is_expected.to eq nil }
+    end
+
+    describe 'Given there is a content entry in DB matching the slug' do
+      let(:slug) { 'foo' }
+
+      it 'returns the section' do
+        expect(subject._slug).to eq 'foo'
+      end
+    end
   end
 
   def localize_content_type

@@ -83,6 +83,5 @@ module Locomotive
         Site.where(handle: value).exists?
       end
     end
-
   end
 end
