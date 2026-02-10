@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-sass',                  '~> 3.4.1'
   s.add_dependency 'autoprefixer-rails',              '~> 10.4.13'
 
-  s.add_dependency 'font-awesome-sass',               '~> 6.3.0'
+  s.add_dependency 'font-awesome-sass',               '~> 6.7.2'
 
   s.add_dependency 'highline',                        '~> 2.1.0'
   s.add_dependency 'bazaar',                          '~> 0.0.2'
